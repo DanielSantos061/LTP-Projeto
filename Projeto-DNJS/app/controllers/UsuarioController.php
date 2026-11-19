@@ -59,3 +59,7 @@ if (!empty($_POST['senha'])) {
 }
     $usuario = $this->model->find($id);
     // SE O USUÁRIO NÃO EXISTIR NO BANCO, ADICIONE ESSA TRAVA:
+
+    if (!$usuario) {
+      header('location: index.php?controller=usuario&action=index');
+    }
